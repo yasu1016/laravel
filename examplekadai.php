@@ -1,5 +1,5 @@
 <?php
 
 Route::group(['prefix' => 'admin'], function () {
-    Route::get('XXX', 'AAAController\bbb@add');
+    Route::get('aaa/bbb', 'AAAController@bbb');
 });
