@@ -26,5 +26,7 @@ class ProfileController extends Controller
     public function update()
     {
         return redirect('admin/profile/edit');
+        
+        //admin.profile.editとadmin.profile.edit の違いは何か？
     }
 }
