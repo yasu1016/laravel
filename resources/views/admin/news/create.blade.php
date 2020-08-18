@@ -11,3 +11,16 @@
         <h1>Myニュース作成画面</h1>
     </body>
 </html>
+@expandeds('layouts.admin')
+
+@section('title','ニュースの新規作成')
+
+@section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h2>ニュースの新規作成</h2>
+            </div>
+        </div>
+    </div>
+@endsection
