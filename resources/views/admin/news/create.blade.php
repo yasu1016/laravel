@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 @extends('layouts.admin')
 
 @section('title','ニュースの新規作成')

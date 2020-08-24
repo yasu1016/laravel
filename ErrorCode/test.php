@@ -9,7 +9,7 @@
         
         <title>@yield('title')</title>
         
-        <script src="{{ secure_asset('js/app.js) }}" defer></script>
+        <script src="{{ secure_asset('js/app.js') }}" defer></script>
         
         <link rel="dns-prefech" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
