@@ -39,7 +39,7 @@ class ProfileController extends Controller
         return view('admin.profile.edit', ['profile_form' => $profile]);
     }
 
-    public function update()
+    public function update(Request $request)
     {
         $this->validate($request, Profile::$rules);
         $profile = Profile::find($request->id);
@@ -58,18 +58,25 @@ class ProfileController extends Controller
         
         $profile->fill($profile_form)->save();
         
-        return redirect('admin/profile/edit');
+        return redirect('admin/profile');
     }
 
     public function index(Request $request)
     {
-        /*$cond_title = $request->cond_title;
-        if ($cond_title != '') {
-            $posts = News::where('title', $cond_title)->get();
+        $cond_name= $request->cond_name;
+        if ($cond_name!= '') {
+            $posts = Profile::where('name', $cond_name)->get();
         } else {
-            $posts = News::all();
-        }*/
+            $posts = Profile::all();
+        }
         
-        return view('admin.profile.index', ['posts' => $posts, 'cond_title' => $cond_title]);
+        return view('admin.profile.index', ['posts' => $posts, 'cond_name' => $cond_name]);
+    }
+    
+    public function delete(Request $request)
+    {
+        $profile = Profile::find($request->id);
+        $profile->delete();
+        return redirect('admin/profile/');
     }
 }
